@@ -20,9 +20,6 @@ var randomLetter = "";
 // Create variable to hold user's last guess
 var userGuess = "";
 
-// Create variable to hold all user's guesses for current game
-// var lettersGuessedDisplay = "";
-
 // Create array of all letters in alphabet
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
                 "j", "k", "l", "m", "n", "o", "p", "q", "r",
@@ -40,7 +37,7 @@ document.onkeyup = function(event) {
         console.log(randomLetter);
     }
 
-    // Check if user's guess is equal to random letter generated
+    // Check if user's guess is equal to random letter generated, indicating user won
     if (userGuess === randomLetter) {
         winCount++;
         resetGame();
@@ -51,10 +48,12 @@ document.onkeyup = function(event) {
             lossCount++;
             resetGame();
         }
-        // Update game to reflect incorrect guess
-        guessesLeftCount--;
-        guessesLeftDisplay.textContent = guessesLeftCount;
-        lettersGuessedDisplay.textContent += userGuess + ",";
+        else {
+            // Update game to reflect incorrect guess
+            guessesLeftCount--;
+            guessesLeftDisplay.textContent = guessesLeftCount;
+            lettersGuessedDisplay.textContent += userGuess + ",";
+        }
     }
 
     // Reset game if user won or lost
