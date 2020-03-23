@@ -37,7 +37,7 @@ document.onkeyup = function(event) {
         console.log(randomLetter);
     }
 
-    // Check if user's guess is equal to random letter generated
+    // Check if user's guess is equal to random letter generated, indicating user won
     if (userGuess === randomLetter) {
         winCount++;
         resetGame();
@@ -48,10 +48,12 @@ document.onkeyup = function(event) {
             lossCount++;
             resetGame();
         }
-        // Update game to reflect incorrect guess
-        guessesLeftCount--;
-        guessesLeftDisplay.textContent = guessesLeftCount;
-        lettersGuessedDisplay.textContent += userGuess + ",";
+        else {
+            // Update game to reflect incorrect guess
+            guessesLeftCount--;
+            guessesLeftDisplay.textContent = guessesLeftCount;
+            lettersGuessedDisplay.textContent += userGuess + ",";
+        }
     }
 
     // Reset game if user won or lost
