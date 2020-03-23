@@ -20,9 +20,6 @@ var randomLetter = "";
 // Create variable to hold user's last guess
 var userGuess = "";
 
-// Create variable to hold all user's guesses for current game
-// var lettersGuessedDisplay = "";
-
 // Create array of all letters in alphabet
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
                 "j", "k", "l", "m", "n", "o", "p", "q", "r",
